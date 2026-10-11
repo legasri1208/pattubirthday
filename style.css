@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #05050a;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, #8b3d7030, transparent 30%),
+        radial-gradient(circle at 80% 70%, #5964b025, transparent 30%);
+    pointer-events: none;
+}
+
+/* STARS */
+
+.stars {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    50% {
+        opacity: .2;
+        transform: scale(.5);
+    }
+}
+
+/* SCREENS */
+
+.screen {
+    display: none;
+    min-height: 100vh;
+    padding: 30px 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: appear .8s ease;
+}
+
+.screen.active {
+    display: flex;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+h1 {
+    font-size: clamp(3rem, 12vw, 7rem);
+}
+
+h2 {
+    font-size: clamp(2.4rem, 8vw, 5rem);
+}
+
+p {
+    color: #cfc6cc;
+    line-height: 1.8;
+}
+
+button {
+    border: 1px solid #ffffff25;
+    background: #ffffff0c;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: inherit;
+    margin-top: 25px;
+    transition: .3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background: #d57aad30;
+    box-shadow: 0 0 30px #d57aad25;
+}
+
+/* INTRO */
+
+.intro small {
+    letter-spacing: 4px;
+    color: #d99bc0;
+}
+
+.intro h1 {
+    margin: 20px 0;
+}
+
+.intro .sub {
+    max-width: 600px;
+    margin: auto;
+}
+
+/* FILE */
+
+.file {
+    max-width: 700px;
+    width: 100%;
+    border: 1px solid #ffffff18;
+    background: #ffffff08;
+    padding: 40px 25px;
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 80px #0008;
+}
+
+.red {
+    color: #ff667b;
+    letter-spacing: 3px;
+}
+
+.file-info {
+    text-align: left;
+    margin: 30px auto;
+    max-width: 450px;
+    border-left: 2px solid #d47eaa;
+    padding-left: 20px;
+}
+
+.file-info p {
+    margin: 8px 0;
+}
+
+/* PASSWORD */
+
+.lock {
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+input {
+    background: #ffffff08;
+    border: 1px solid #ffffff20;
+    padding: 14px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    outline: none;
+    width: min(280px, 90%);
+    margin-top: 20px;
+    font-family: inherit;
+}
+
+.error {
+    color: #ff8294;
+    margin-top: 12px;
+}
+
+/* QUIZ */
+
+.quiz {
+    max-width: 650px;
+    width: 100%;
+}
+
+.question-box {
+    margin-top: 30px;
+    padding: 30px;
+    background: #ffffff08;
+    border: 1px solid #ffffff15;
+    border-radius: 20px;
+}
+
+.option {
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+}
+
+.correct {
+    background: #a9dfc025 !important;
+    border-color: #a9dfc070;
+}
+
+.wrong {
+    background: #df718025 !important;
+}
+
+/* TIMELINE */
+
+.timeline {
+    width: min(900px, 100%);
+}
+
+.years {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.year {
+    padding: 25px 10px;
+    border: 1px solid #ffffff15;
+    border-radius: 20px;
+    background: #ffffff07;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.year:hover {
+    transform: translateY(-6px);
+    border-color: #d786ae80;
+}
+
+.year span {
+    font-size: 1.8rem;
+}
+
+
+.year img {
+    display: block;
+    width: 100%;
+    height: 130px;
+    margin-top: 12px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* MEMORY */
+
+.memory-container {
+    width: min(900px, 100%);
+}
+
+.memory-card {
+    margin-top: 30px;
+    background: #ffffff08;
+    border: 1px solid #ffffff15;
+    border-radius: 25px;
+    padding: 18px;
+}
+
+.memory-photo {
+    height: 350px;
+    border-radius: 18px;
+    background:
+        linear-gradient(135deg, #241522, #11121d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d993b8;
+    overflow: hidden;
+}
+
+.memory-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.memory-card h3 {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.memory-card p {
+    margin-top: 8px;
+}
+
+/* CONSTELLATION */
+
+.constellation {
+    width: min(850px, 100%);
+    height: 550px;
+    position: relative;
+    overflow: hidden;
+}
+
+.constellation-line {
+    position: absolute;
+    height: 1px;
+    background: #ffffff25;
+    transform-origin: left;
+}
+
+.constellation-star {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 20px white;
+    cursor: pointer;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    to {
+        box-shadow: 0 0 35px #e9a4c7;
+    }
+}
+
+.constellation-text {
+    margin-top: 20px;
+}
+
+/* LETTER */
+
+.letter {
+    max-width: 750px;
+    padding: 40px 25px;
+    text-align: left;
+    border: 1px solid #ffffff15;
+    background: #ffffff08;
+    border-radius: 25px;
+}
+
+.letter h2 {
+    text-align: center;
+}
+
+.letter p {
+    margin: 20px 0;
+}
+
+.special {
+    text-align: center;
+    color: #f1b2d1;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+}
+
+/* FINAL */
+
+.final-heart {
+    font-size: 100px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    50% {
+        transform: scale(1.15);
+        filter: drop-shadow(0 0 30px #e48ab8);
+    }
+}
+
+.final p {
+    margin-top: 15px;
+}
+
+.big {
+    font-size: 1.4rem;
+    color: #efb0cf;
+}
+
+/* CONFETTI */
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    z-index: 100;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@media(max-width:650px) {
+
+    .years {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .memory-photo {
+        height: 260px;
+    }
+
+    .constellation {
+        height: 450px;
+    }
+}

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yogasri — The 8 Year File 🤍</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+
+<!-- INTRO -->
+
+<section class="screen active intro" id="intro">
+
+    <div>
+
+        <small>CLASSIFIED • PERSONAL • TOP SECRET</small>
+
+        <h1>Yogasri.</h1>
+
+        <p class="sub">
+            Somewhere in this universe is a little story
+            about two idiots who accidentally became best friends.
+        </p>
+
+        <button onclick="openFile()">
+            OPEN SECRET FILE 🔐
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- SECRET FILE -->
+
+<section class="screen" id="file">
+
+    <div class="file">
+
+        <div class="red">🔴 TOP SECRET</div>
+
+        <h2>CASE FILE</h2>
+
+        <div class="file-info">
+
+            <p><b>Subject:</b> Yogasri</p>
+
+            <p><b>Alias:</b> Uppma</p>
+
+            <p><b>Partner in crime:</b> Chuchu</p>
+
+            <p><b>Friendship duration:</b> 8 Years</p>
+
+            <p><b>Current status:</b> Still inseparable 🤍</p>
+
+        </div>
+
+        <p>
+            The following memories are highly classified.
+            Only Yogasri is authorized to access them.
+        </p>
+
+        <button onclick="show('password')">
+            ACCESS FILE →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PASSWORD -->
+
+<section class="screen" id="password">
+
+    <div>
+
+        <div class="lock">🔐</div>
+
+        <h2>Security Check</h2>
+
+        <p>
+            Enter the name Chuchu uses for you.
+        </p>
+
+        <input id="pass" placeholder="Hint: starts with U...">
+
+        <br>
+
+        <button onclick="checkPassword()">
+            UNLOCK
+        </button>
+
+        <p class="error" id="error"></p>
+
+    </div>
+
+</section>
+
+
+<!-- QUIZ -->
+
+<section class="screen" id="quiz">
+
+    <div class="quiz">
+
+        <p>BEST FRIEND VERIFICATION</p>
+
+        <h2>Question 01</h2>
+
+        <div class="question-box">
+
+            <h3>
+                Who is more likely to say
+                "Let's skip class"? 😂
+            </h3>
+
+            <button class="option" onclick="answer(this, true)">
+                Chuchu 😌
+            </button>
+
+            <button class="option" onclick="answer(this, false)">
+                Yogasri 👀
+            </button>
+
+            <button class="option" onclick="answer(this, false)">
+                Both of us 😂
+            </button>
+
+            <p id="quizResult"></p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TIMELINE -->
+
+<section class="screen" id="timeline">
+
+    <div class="timeline">
+
+        <p>THE TIME MACHINE</p>
+
+        <h2>8 Years of Us ⏳</h2>
+
+        <p>
+            Choose a year to unlock a memory.
+        </p>
+
+        <div class="years">
+            <div class="year" onclick="memory(2018)">
+                <span>✦</span><br>2018
+                <img src="images/year2018.png" alt="2018 memory preview" onerror="this.style.display='none'">
+            </div>
+            <div class="year" onclick="memory(2019)">
+                <span>✦</span><br>2019
+                <img src="images/year2019.png" alt="2019 memory preview" onerror="this.style.display='none'">
+            </div>
+            <div class="year" onclick="memory(2020)">
+                <span>✦</span><br>2020
+                <img src="images/year2020.png" alt="2020 memory preview" onerror="this.style.display='none'">
+            </div>
+            <div class="year" onclick="memory(2021)">
+                <span>✦</span><br>2021
+                <img src="images/year2021.png" alt="2021 memory preview" onerror="this.style.display='none'">
+            </div>
+            <div class="year" onclick="memory(2022)">
+                <span>✦</span><br>2022
+                <img src="images/year2022.png" alt="2022 memory preview" onerror="this.style.display='none'">
+            </div>
+            <div class="year" onclick="memory(2023)">
+                <span>✦</span><br>2023
+                <img src="images/year2023.png" alt="2023 memory preview" onerror="this.style.display='none'">
+            </div>
+            <div class="year" onclick="memory(2024)">
+                <span>✦</span><br>2024
+                <img src="images/year2024.png" alt="2024 memory preview" onerror="this.style.display='none'">
+            </div>
+            <div class="year" onclick="memory(2025)">
+                <span>✦</span><br>2025
+                <img src="images/year2025.png" alt="2025 memory preview" onerror="this.style.display='none'">
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MEMORY -->
+
+<section class="screen" id="memory">
+
+    <div class="memory-container">
+
+        <p id="memoryYear"></p>
+
+        <h2 id="memoryTitle"></h2>
+
+        <div class="memory-card">
+
+            <!-- CHANGE THIS IMAGE -->
+            <div class="memory-photo" id="photoArea">
+                <img id="memoryImage" src="images/memory2018.png" alt="Friendship memory">
+            </div>
+
+            <h3 id="memoryHeading"></h3>
+
+            <p id="memoryText"></p>
+
+        </div>
+
+        <button onclick="show('timeline')">
+            ← Back to the years
+        </button>
+
+        <button onclick="show('constellation')">
+            Continue ✨
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- CONSTELLATION -->
+
+<section class="screen" id="constellation">
+
+    <div>
+
+        <p>THE UNIVERSE KNOWS</p>
+
+        <h2>Your Memories ✨</h2>
+
+        <p>
+            Every memory became a little star.
+        </p>
+
+        <div class="constellation" id="constellationBox">
+
+            <div class="constellation-star"
+                 style="left:15%;top:25%"
+                 onclick="starMessage('The beginning of our chaos 🤍')">
+            </div>
+
+            <div class="constellation-star"
+                 style="left:35%;top:45%"
+                 onclick="starMessage('That trip without Mum\\'s permission 😂')">
+            </div>
+
+            <div class="constellation-star"
+                 style="left:55%;top:30%"
+                 onclick="starMessage('Skipping classes like professionals 😭')">
+            </div>
+
+            <div class="constellation-star"
+                 style="left:75%;top:55%"
+                 onclick="starMessage('Our secret adventures 👀')">
+            </div>
+
+            <div class="constellation-star"
+                 style="left:45%;top:75%"
+                 onclick="starMessage('Eight years of us 🫂')">
+            </div>
+
+        </div>
+
+        <h3 id="starMessage" class="constellation-text"></h3>
+
+        <button onclick="show('letter')">
+            Read my letter 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- LETTER -->
+
+<section class="screen" id="letter">
+
+    <div class="letter">
+
+        <p style="text-align:center">
+            FROM CHUCHU, WITH LOVE 🤍
+        </p>
+
+        <h2>Dear Yogasri,</h2>
+
+        <p>
+            Eight years.
+        </p>
+
+        <p>
+            When I think about those eight years, I don't just
+            remember dates. I remember all the little moments
+            that somehow became some of the biggest parts of my life.
+        </p>
+
+        <p>
+            The trips we went on without Mum's permission,
+            the classes we skipped, the crazy plans,
+            the secrets, the laughter and all the things
+            that probably should never be documented. 😂
+        </p>
+
+        <p>
+            Somehow, through everything, you stayed.
+        </p>
+
+        <p class="special">
+            As long as I'm alive, you will always be loved by me.
+            No one ever could. 🤍🫂😘
+        </p>
+
+        <p>
+            I don't know what the next eight years will look like.
+            But I know one thing —
+            I want a lot more memories with you.
+        </p>
+
+        <p style="text-align:right">
+            Happy Birthday, my PATTU. 🎂<br>
+            — Chuchu 🤍
+        </p>
+
+        <div style="text-align:center">
+
+            <button onclick="birthday()">
+                One final surprise 🎂
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="screen final" id="final">
+
+    <div>
+
+        <div class="final-heart">🤍</div>
+
+        <h1>Happy Birthday,<br>Yogasri!</h1>
+
+        <p>
+            8 years down...
+        </p>
+
+        <p class="big">
+            and a lifetime of memories to go. 🫂
+        </p>
+
+        <p>
+            Love you always, Uppma.
+        </p>
+
+        <button onclick="location.reload()">
+            Replay our story ↻
+        </button>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
